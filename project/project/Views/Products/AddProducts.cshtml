@@ -1,0 +1,40 @@
+﻿@model Models.Products
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Add New Products</h2>
+<head>
+    <style>
+        pre {
+            font-family: Arial;
+            width: 36%;
+            height: 30%;
+            box-shadow: 3px 4px 24px 14px black;
+        }
+    </style>
+</head>
+
+<h3> Registration</h3>
+<hr class="soft" />
+<div class="well">
+    @Html.ActionLink("Login", "Login");
+    @using (Html.BeginForm("AddProducts", "Products", FormMethod.Post))
+    {
+        <Center>
+            <div class="control-group">
+                <br /><br />
+                <pre> @Html.LabelFor(m=>m.Name)   @Html.TextBoxFor(m=>m.Name)
+             @Html.LabelFor(m=>m.Price)   @Html.TextBoxFor(m=>m.Price)
+             @Html.LabelFor(m=>m.Discription)   @Html.TextBoxFor(m=>m.Discription)
+                <input type="file" value="Add Picture" name="addimage" />
+
+               
+<input class="btn-inverse" type="submit" value="ADD" />
+</pre>
+            </div>
+        </Center>
+
+    }
+
+</div>

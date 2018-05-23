@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Models.Products>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container">
+    <br />
+    <h3>You are Logined as @Session["Name"]</h3>
+    <div class="btn-outline-dark pull-right">@Html.ActionLink("Logout", "Logout", "Customer")</div>
+    <div class="content-top-blue">
+        <h2 class="new">Products</h2>
+        <div class="pink">
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3 blue">
+                        <a href=""> <img src="~/images/de3.jpg" class="img-responsive" alt=""></a>
+                        <!---->
+
+                        <div class="grid_1 simpleCart_shelfItem " style="position:relative">
+                            <a href="#" class="cup item_add ">@item.Name</a>
+                            <div style="position:absolute">
+                                @Html.ActionLink("Add To Cart", "AddtoCart", "Cart", new { id = item.id }, null)
+                        </div>
+                        <!---->
+
+
+
+                    </div>
+
+                </div>
+                }
+
+
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>

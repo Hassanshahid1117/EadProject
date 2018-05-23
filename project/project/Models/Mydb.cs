@@ -11,6 +11,7 @@ namespace Models
         public Mydb() : base("mycon")
         { }
         public DbSet<customer> customer { get; set; }
-       
+        public DbSet<Products> products { get; set; }
+
     }
 }
