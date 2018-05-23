@@ -1,13 +1,12 @@
-﻿using CrudExample.Models;
-using Models;
-using project.Models;
+﻿
+
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace Models
+namespace project.Models
 {
     public class Mydb : DbContext
     {

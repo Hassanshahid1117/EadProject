@@ -1,0 +1,46 @@
+﻿@model IEnumerable<project.Models.customer>
+@{
+    ViewBag.Title = "CustomerData";
+}
+
+<Center><h2>CustomerData</h2></Center>
+<h2>@Html.ActionLink("Home", "index")/@Html.ActionLink("Customer Data", "CustomerData")</h2>
+<div class="container"><div class="btn-outline-dark pull-right ">@Html.ActionLink("Logout", "Logout", "Admin")</div></div>
+
+<div class="well well-small" style="background-color:aliceblue;">
+    <hr class="soften" />
+
+    <div class="bs-docs-example">
+
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>View Orders</th>
+                    <th>Delete Customer</th>
+                </tr>
+
+
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+
+                <td>@item.id</td>
+                <td>@item.Name</td>
+                <td> @item.Username </td>
+
+                <th> <a href="~/Admin/ShowOrder/@item.id">Orders</a></th>
+                <th> <a href="~/Admin/DeleteCutomer/@item.id">Remove</a></th>
+                </tbody>
+            }
+
+
+
+
+        </table><br />
+
+    </div>
+</div>

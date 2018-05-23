@@ -1,4 +1,4 @@
-﻿@model Project.Models.customer
+﻿@model project.Models.Admin
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,29 +33,29 @@
 
                 <div class="login100-form validate-form">
                     <span class="login100-form-title">
-                        Member Login
+                        Admin SignUP
                     </span>
 
 
                     <div>
-                        <div>
-                            @Html.ActionLink("Signup", "Signup") &nbsp;&nbsp;
-                            @Html.ActionLink("Login as Administrator", "Login", "Admin")
-                            @using (Html.BeginForm("Login", "Customer", FormMethod.Post))
-                            {
+
+                        @Html.ActionLink("Login as Customer", "Login", "Admin")
+                        @using (Html.BeginForm("Signup", "Admin", FormMethod.Post))
+                        {
+
+                            <div class="control-group">
+                                <br /><br />
+
+<pre style="font-family:Arial;font-size:10px"> 
+                                <h2 style="text-anchor:middle">
+                        @Html.LabelFor(m => m.username)   @Html.TextBoxFor(m => m.username) 
+                        @Html.LabelFor(m => m.password)   @Html.PasswordFor(m => m.password) 
+                                <input class="btn-inverse" style="border-color:aliceblue;box-shadow: 10px 4px 20px 1px black;background-color:forestgreen;border-radius:75px 75px 75px 75px;width:50%;height:40px" type="submit" value="SIGNUP" />
+                            </div>
 
 
-                                <pre style="font-family:Arial;font-size:10px;border-radius:0px 40px 0px 40px;box-sizing:padding-box;box-shadow: 5px 5px 10px 1px black;background-color:#465765;color:white;width:130%"> 
-                                <h2>@Html.LabelFor(n=>n.Username) @Html.TextBoxFor(m =>m.Username)<p style="font-size:12px" class="text-danger"> @Html.ValidationMessageFor(m=>m.Username)</p>
-@Html.LabelFor(k=>k.Password) @Html.PasswordFor(m => m.Password) <p style="font-size:12px" class="text-danger"> @Html.ValidationMessageFor(m=>m.Password)</p></h2>
-<input class="btn-inverse" style="border-color:aliceblue;box-shadow: 10px 4px 20px 1px black;background-color:forestgreen;border-radius:75px 75px 75px 75px;width:50%;height:40px" type="submit" value="LOGIN" />
-                </pre>
+                        }
 
-
-
-                            }
-
-                        </div>
                     </div>
 
                     <div class="text-center p-t-136">
@@ -66,28 +66,27 @@
                     </div>
                 </div>
             </div>
+
         </div>
-    </div>
 
 
 
-
-    <!--===============================================================================================-->
-    <script src="~/1vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/1vendor/bootstrap/js/popper.js"></script>
-    <script src="~/1vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/1vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/1vendor/tilt/tilt.jquery.min.js"></script>
-    <script>
+        <!--===============================================================================================-->
+        <script src="~/1vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="~/1vendor/bootstrap/js/popper.js"></script>
+        <script src="~/1vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="~/1vendor/select2/select2.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="~/1vendor/tilt/tilt.jquery.min.js"></script>
+        <script>
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})
-    </script>
-    <!--===============================================================================================-->
-    <script src="~/1js/main.js"></script>
+        </script>
+        <!--===============================================================================================-->
+        <script src="~/1js/main.js"></script>
 
 </body>
 </html>
