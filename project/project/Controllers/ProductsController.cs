@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using project.Models;
 using Models;
 
-namespace CrudExample.Controllers
+namespace project.Controllers
 {
     public class ProductsController : Controller
     {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Models;
 
-namespace CrudExample.Controllers
+namespace project.Controllers
 {
     public class CustomerController : Controller
     {

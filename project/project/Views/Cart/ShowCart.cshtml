@@ -1,0 +1,73 @@
+﻿@model IEnumerable<project.Models.cart>
+@{
+    ViewBag.Title = "Index";
+}
+@{
+    float totalprice = 0;
+    int count = 0;
+}
+<div class="container"><div class="btn-outline-dark pull-right ">@Html.ActionLink("Logout", "Logout", "Customer")</div></div>
+
+
+<div class="well well-small">
+    <hr class="soften" />
+
+
+    <div class="bs-docs-example">
+
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <h4>Check Out </h4>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Remove From Cart</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    foreach (var pitem in ViewBag.ProductsList)
+                    {
+                        if (item.cid == (int)Session["id"])
+                        {
+
+                            if (item.pid == pitem.id)
+                            {
+                                totalprice = totalprice + pitem.Price;
+                                count++;
+                                <tr>
+                                    <td> @pitem.Name</td>
+
+                                    <td>Rs. @pitem.Price</td>
+                                    <th><a href="~/Cart/RemoveProduct/@item.id" class="text-danger">Remove</a></th>
+                                </tr>
+                            }
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+
+
+        <div class="bs-docs-example">
+
+            <table class="table table-bordered table-condensed">
+                @{
+                    Session["Cart"] = count;
+                }
+                <h4<small class="pull-right"> @count Items in your cart</small></h4>
+                <tbody>
+                    <tr>
+                        <th style="font-weight:700">Total products: @count 	</th>
+                        <th>Total Price : @totalprice Rs</th>
+
+
+                        <th><a href="~/Orders/placeOrder" class="text-success">Order Now</a> </th>
+                    </tr>
+                </tbody>
+                <tr>@Html.ActionLink("Continue Shopping", "index", "Products")</tr>
+            </table>
+        </div>
+    </div>

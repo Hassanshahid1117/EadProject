@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace Models
         { }
         public DbSet<customer> customer { get; set; }
         public DbSet<Products> products { get; set; }
+        public DbSet<cart> cart { get; set; }
+
 
     }
 }
