@@ -1,40 +1,155 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <title>Markito A Ecommerce Category Flat Bootstarp Resposive Website Template | Contact :: w3layouts</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/js/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Markito Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Amaranth:400,700' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <script type="text/javascript" src="~/js/move-top.js"></script>
+    <script type="text/javascript" src="~/js/easing.js"></script>
+    <script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+    </script>
+    <!-- start menu -->
+    <link href="~/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="~/js/megamenu.js"></script>
+    <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+
+    <script src="~/js/simpleCart.min.js"> </script>
+    <style>
+        li {
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+    <!--header-->
+
+    <div class="header">
+        <div class="top-header">
+            <div class="container">
+                <div class="top-head">
+
+
+
+                </div>
+                <h2 style="color:white">Interior Creative Solutions</h2>
+
+                <ul class="header-in">
+                    <li><a href="~/Products/index">Home</a></li>
+                    <li><a href="~/Orders/Index">My orders</a> </li>
+                    <li><a href="404.html"></a> </li>
+
                 </ul>
+                <div class="pull-right">
+                    <a href="~/Cart/ShowCart" style="color:white;font-size:14px">
+                        Cart @Session["Cart"]. Items
+                        <img src="~/images/cart-c.png" />
+                    </a>
+                </div>
+
+                <div class="search-top">
+                    <div class="search">
+                        <form>
+                            <input type="text" value="search about something ?" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'search about something ?';}">
+                            <input type="submit" value="">
+                        </form>
+                    </div>
+                    <div class="world">
+                        <ul>
+                            <li><a href="#"><span> </span></a> </li>
+                            <li>
+                                <select class="in-drop">
+                                    <option>EN</option>
+                                    <option>DE</option>
+                                    <option>ES</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
             </div>
         </div>
     </div>
+    <!---->
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+
+    @RenderBody()
+
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 footer-left">
+                <a href="index.html"><img src="images/logo.png" alt=""></a>
+                <p class="footer-class">© 2015 Markito All Rights Reserved | Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+            </div>
+            <div class="col-md-2 footer-middle">
+                <ul>
+                    <li><a href="404.html">about us</a> </li>
+                    <li><a href="contact.html">   contact us</a></li>
+                    <li><a href="products.html">  our stores</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-left">
+                <ul class="term">
+                    <li><a href="#">terms and conditions</a> </li>
+                    <li><a href="#">  markito in the press</a></li>
+                    <li><a href="#">  testimonials</a></li>
+                </ul>
+                <ul class="term">
+                    <li><a href="#">join us</a> </li>
+                    <li><a href="#">  markito videos</a></li>
+
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-3 footer-right">
+                <h5>WE SUPPORT</h5>
+                <ul>
+                    <li><a href="#"><i> </i></a> </li>
+                    <li><a href="#"><i class="we"> </i></a></li>
+                    <li><a href="#"><i class="we-in"> </i></a></li>
+                    <li><a href="#"><i class="we-at"> </i></a></li>
+                    <li><a href="#"><i class="we-at-at"> </i></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <script type="text/javascript">
+						$(document).ready(function() {
+
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear'
+					 		};
+
+
+							$().UItoTop({ easingType: 'easeOutQuart' });
+
+						});
+        </script>
+        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     </div>
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
