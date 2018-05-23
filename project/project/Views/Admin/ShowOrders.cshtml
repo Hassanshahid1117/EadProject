@@ -1,0 +1,59 @@
+﻿@model IEnumerable<project.Models.Orders>
+@{
+    ViewBag.Title = "Order";
+}
+
+<h2>All Orders</h2>
+<div class="container"><div class="btn-outline-dark pull-right ">@Html.ActionLink("Logout", "Logout", "Admin")</div></div>
+<h4>@Html.ActionLink("Home", "index")/@Html.ActionLink("All Orders", "ShowOrders")</h4>
+
+<div class="well well-small">
+    <hr class="soften" />
+
+    <div class="bs-docs-example">
+
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Username</th>
+                    <th>Product</th>
+                    <th>Status</th>
+
+
+                </tr>
+            </thead>
+
+
+            @foreach (var item in Model)
+            {
+                foreach (var cus in ViewBag.customers)
+                {
+                    foreach (var products in ViewBag.products)
+                    {
+                        if (item.uis == cus.id)
+                        {
+                            if (products.id == item.pid)
+                            {
+                                <tr>
+                                    <td>@cus.id</td>
+                                    <td> @cus.Name</td>
+                                    <td> @products.Name</td>
+                                    <td>@item.status</td>
+                                    <th>
+                                        @Html.ActionLink("Approve", "OrderStatus", new { Cid = cus.id, Oid = item.id, status = 1, RedirtectFrom = 1 }, null)
+                                        @Html.ActionLink("Reject", "OrderStatus", new { Cid = cus.id, Oid = item.id, status = 0, RedirtectFrom = 0 }, null)
+                                    </th>
+                                </tr>
+
+
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            </thead>
+        </table>
+    </div>
