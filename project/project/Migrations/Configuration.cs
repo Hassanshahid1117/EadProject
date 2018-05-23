@@ -8,7 +8,7 @@ namespace project.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
     }
         public class SeedContext : DropCreateDatabaseAlways<Mydb>
