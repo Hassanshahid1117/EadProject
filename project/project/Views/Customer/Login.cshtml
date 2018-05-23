@@ -1,0 +1,93 @@
+﻿@model Models.customer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login V1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/1images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/1vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/1fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/1vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/1vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/1vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/1css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/1css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="~/1images/img-01.png" alt="IMG">
+                </div>
+
+                <div class="login100-form validate-form">
+                    <span class="login100-form-title">
+                        Member Login
+                    </span>
+
+
+                    <div>
+                        <div>
+                            @Html.ActionLink("Signup", "Signup") &nbsp;&nbsp;
+                            @Html.ActionLink("Login as Administrator", "Login", "Admin")
+                            @using (Html.BeginForm("Login", "Customer", FormMethod.Post))
+                            {
+
+
+                                <pre style="font-family:Arial;font-size:10px;border-radius:0px 40px 0px 40px;box-sizing:padding-box;box-shadow: 5px 5px 10px 1px black;background-color:#465765;color:white;width:130%"> 
+                                <h2>@Html.LabelFor(n=>n.Username) @Html.TextBoxFor(m =>m.Username)<p style="font-size:12px" class="text-danger"> @Html.ValidationMessageFor(m=>m.Username)</p>
+@Html.LabelFor(k=>k.Password) @Html.PasswordFor(m => m.Password) <p style="font-size:12px" class="text-danger"> @Html.ValidationMessageFor(m=>m.Password)</p></h2>
+<input class="btn-inverse" style="border-color:aliceblue;box-shadow: 10px 4px 20px 1px black;background-color:forestgreen;border-radius:75px 75px 75px 75px;width:50%;height:40px" type="submit" value="LOGIN" />
+                </pre>
+
+
+
+                            }
+
+                        </div>
+                    </div>
+
+                    <div class="text-center p-t-136">
+                        <a class="txt2" href="#">
+                            Create your Account
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="~/1vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/1vendor/bootstrap/js/popper.js"></script>
+    <script src="~/1vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/1vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/1vendor/tilt/tilt.jquery.min.js"></script>
+    <script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+    </script>
+    <!--===============================================================================================-->
+    <script src="~/1js/main.js"></script>
+
+</body>
+</html>
