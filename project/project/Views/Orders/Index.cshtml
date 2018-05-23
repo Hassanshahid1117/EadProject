@@ -1,0 +1,48 @@
+﻿@model IEnumerable<project.Models.Orders>
+@{
+    ViewBag.Title = "Order";
+}
+<br />
+<h2>&nbsp;Your Orders</h2>
+<div class="container"><div class="btn-outline-dark pull-right ">@Html.ActionLink("Logout", "Logout", "Customer")</div></div>
+
+<hr class="soften" />
+
+<div class="well well-small">
+
+    <div class="bs-docs-example">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Remove Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                foreach (var pitem in ViewBag.ProductsList)
+                {
+                    if (item.uis == (int)Session["id"])
+                    {
+
+                        if (item.pid == pitem.id)
+                        {
+
+                                <tr>
+                                    <th>@pitem.Name</th>
+
+                                    <th>@pitem.Price</th>
+                                    <th>@item.status</th>
+                                    <th><a href="~/Orders/RemoveOrder/@item.id" class="text-danger">Remove</a></th>
+                                </tr>
+                            }
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
